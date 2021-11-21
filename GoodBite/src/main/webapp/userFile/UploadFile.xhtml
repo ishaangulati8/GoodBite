@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+  - Created by Osman Balci on 2021.7.14
+  - Copyright © 2021 Osman Balci. All rights reserved.
+  -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+
+    <!-- This page is constructed based on the siteTemplate -->
+    <ui:composition template="/template/siteTemplate.xhtml">
+
+        <ui:define name="title">
+            <!-- Set the page title -->
+            <h:outputText value="Upload File" />
+        </ui:define>
+
+        <!-- Create the content for this page below -->
+        <ui:define name="editableContent">
+
+            <!--
+            The enctype attribute sets the content type of the data to be submitted to the server.  
+            enctype="multipart/form-data" is required when the form used has a file upload control.
+            -->
+            <h:form enctype="multipart/form-data">
+                <div align="center">
+
+                    <h:panelGroup id="display">
+
+                        <p:panelGrid columns="2" columnClasses="panelGridColumn1, panelGridColumn2">
+
+                            <p:outputLabel value="Image File:" for="file" />
+                            <p:fileUpload id="file" value="#{fileUploadManager.uploadedFile}" mode="simple"
+                                          skinSimple="true" sizeLimit="30000000"
+                                          required="true" requiredMessage="Please choose an image to upload!"/>
+
+                            <p:outputLabel value="Meal Name:" for="name" />
+                            <p:inputText id="name" value="#{fileUploadManager.mealName}" style="width:400px"
+                                         required="true" requiredMessage="Meal Name is required!"/>
+
+                            <p:outputLabel value="Meal Description:" for="description" />
+                            <p:inputTextarea id="description" value="#{fileUploadManager.mealDescription}" style="width:400px"
+                                             required="true" requiredMessage="Meal Description is required!"/>
+
+                        </p:panelGrid>
+                    </h:panelGroup>
+
+                    <h:panelGroup>
+                        <br /><br />
+                        <div align="center">
+                            <!-- SUBMIT button -->
+                            <p:commandButton id="submitButton" value="Submit" icon="fas fa-save" styleClass="rounded-button"
+                                             ajax="false" actionListener="#{fileUploadManager.handleFileUpload()}"
+                                             update="display,:growlInfoMessage,:growlWarningMessage,:growlErrorMessage,:growlFatalMessage"/>
+                        </div>
+                    </h:panelGroup>
+
+
+                </div>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+</html>
