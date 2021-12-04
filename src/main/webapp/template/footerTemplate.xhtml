@@ -16,9 +16,20 @@ This page's content is displayed on the bottom of each page created based on the
 Changes made in this file will show up automatically with all pages created based on the
 siteTemplate for the entire site, achieving great maintainability.
 -->
+<head>
+    <style type ="text/css">
+        .footerstyle {
+            position: fixed;
+            padding: 20px;
+            text-align: center;
+            background: lavender;
+        }
+    </style>
+</head>
+
 
 <ui:composition>
-    <br /><br />
+    <div class="footerstyle">
     <table width="100%" border="0" align="center" cellpadding="5" cellspacing="0">
         <tr>
             <td align="center" valign="middle">
@@ -44,12 +55,14 @@ siteTemplate for the entire site, achieving great maintainability.
         <tr>
             <td align="center" valign="middle">
                 <!-- Developer Attribution -->
-                <a href="https://manta.cs.vt.edu/cs5704/" target="_blank">
+                <b><a href="https://manta.cs.vt.edu/cs5704/" target="_blank">
                     CS5704 Software Engineering</a> Semester Project by
-                <a href="https://vt.edu/" target="_blank">Team 5</a>.
+                    <a href="https://vt.edu/" target="_blank">Team 5</a>. </b>
             </td>
         </tr>
     </table>
     <br /><br />
+    </div>
 </ui:composition>
+
 </html>

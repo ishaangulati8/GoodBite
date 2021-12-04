@@ -77,6 +77,18 @@ public class UserFile implements Serializable {
     @ManyToOne
     private User userId;
 
+    // meal_name VARCHAR(128) NOT NULL
+    @Basic(optional = false)
+    @Size(min = 1, max = 128)
+    @Column(name = "meal_name")
+    private String mealName;
+
+    // file_description VARCHAR(2048) NOT NULL
+    @Basic(optional = false)
+    @Size(min = 1, max = 2048)
+    @Column(name = "meal_description")
+    private String mealDescription;
+
     /*
     ===================================================================
     Class constructors for instantiating a UserFile entity object to
@@ -87,9 +99,11 @@ public class UserFile implements Serializable {
     }
 
     // Used in handleFileUpload() method of FileUploadManager
-    public UserFile(String filename, User id) {
+    public UserFile(String filename, User id, String mealName, String mealDescription) {
         this.filename = filename;
         userId = id;
+        this.mealName = mealName;
+        this.mealDescription = mealDescription;
     }
 
     /*
@@ -120,6 +134,22 @@ public class UserFile implements Serializable {
 
     public void setUserId(User userId) {
         this.userId = userId;
+    }
+
+    public String getMealName() {
+        return mealName;
+    }
+
+    public void setMealName(String mealName) {
+        this.mealName = mealName;
+    }
+
+    public String getMealDescription() {
+        return mealDescription;
+    }
+
+    public void setMealDescription(String mealDescription) {
+        this.mealDescription = mealDescription;
     }
 
     /*

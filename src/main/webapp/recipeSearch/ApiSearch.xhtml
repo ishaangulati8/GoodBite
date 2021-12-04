@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  - Created by Ishaan Gulati on 2021.11.21
+  - Copyright © 2021 Ishaan Gulati. All rights reserved.
+  -->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<ui:composition>
+    <p:dialog id="RecipeSearchDlg" header="Search Recipes" widgetVar="RecipeSearchDialog"
+              modal="true" position="center" appendTo="@(body)"
+              showEffect="slide" hideEffect="fade" responsive="true">
+
+        <h:form id="recipeSearchDialogForm" style=" border: none;">
+            <p:panel>
+                <h:panelGroup>
+                    <p:panelGrid columns="2"
+                                 styleClass="ui-noborder">
+                        <p:outputLabel value="Search " for="searchQuery"/>
+                        <p:inputText id="searchQuery" value="#{recipeSearchController.query}"
+                                     required="true" requiredMessage="Please Enter a Search String!"
+                                     placeholder="Enter search string">
+                            <f:validateLength minimum="2"/>
+                        </p:inputText>
+                    </p:panelGrid>
+                </h:panelGroup>
+            </p:panel>
+            <h:panelGroup>
+                <br/><br/>
+                <div align="center">
+                    <!-- Search button
+                    clicking on submit button would call performSearch() function which would call and process the data
+                    from endamam api.
+                    -->
+                    <p:commandButton value="Search" icon="fas fa-search" styleClass="rounded-button"
+                                     ajax="false" action="#{recipeSearchController.performSearch()}"/>
+
+                    &nbsp;&nbsp;
+                    <p:commandButton value="Clear" icon="fas fa-undo" styleClass="ui-button-outlined"
+                                     immediate="true"
+                                     actionListener="#{recipeSearchController.clear()}"
+                                     update=":recipeSearchDialogForm" oncomplete="PF('RecipeSearchDialog').show()">
+
+                        <p:resetInput target=":recipeSearchDialogForm"/>
+                    </p:commandButton>
+                    &nbsp;&nbsp;
+                    &nbsp;
+                    <!-- CANCEL button -->
+                    <p:commandButton value="Cancel" icon="fas fa-ban" styleClass="ui-button-outlined"
+                                     immediate="true" ajax="false"
+
+                                     onclick="PF('RecipeSearchDialog').hide()"/>
+
+                    <!-- Clear entered values and selections if any -->
+                    <!--                        <p:resetInput target=":recipeSearchDialogForm"/>-->
+                    <!--                    </p:commandButton>-->
+                    <br/><br/>
+                </div>
+            </h:panelGroup>
+        </h:form>
+    </p:dialog>
+</ui:composition>
+</html>

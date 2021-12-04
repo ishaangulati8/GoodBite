@@ -300,6 +300,41 @@ public class UserFileController implements Serializable {
         }
     }
 
+    public String deleteUserFile(UserFile userFileToDelete) {
+
+        /*
+        We need to preserve the messages since we will redirect to show a
+        different JSF page after successful deletion of the user file.
+         */
+        Methods.preserveMessages();
+
+        if (userFileToDelete == null) {
+            Methods.showMessage("Fatal Error", "No File Selected!", "You do not have a file to delete!");
+            return "";
+        } else {
+            try {
+                // Delete the file from CloudStorage/FileStorage
+                Files.deleteIfExists(Paths.get(userFileToDelete.getFilePath()));
+
+                // Delete the user file record from the database
+                userFileFacade.remove(userFileToDelete);
+                // UserFileFacade inherits the remove() method from AbstractFacade
+
+                Methods.showMessage("Information", "Success!", "Selected File is Successfully Deleted!");
+
+                // See method below
+                refreshFileList();
+
+                return "/userFile/FavoriteMeals?faces-redirect=true";
+
+            } catch (IOException ex) {
+                Methods.showMessage("Fatal Error", "Something went wrong while deleting the user file!",
+                        "See: " + ex.getMessage());
+                return "";
+            }
+        }
+    }
+
     /*
     ========================
     Refresh User's File List
@@ -397,6 +432,10 @@ public class UserFileController implements Serializable {
      */
     public String selectedFileURI() {
         return Constants.FILES_URI + selected.getFilename();
+    }
+
+    public String getFileURI(UserFile file){
+        return Constants.FILES_URI + file.getFilename();
     }
 
     /*

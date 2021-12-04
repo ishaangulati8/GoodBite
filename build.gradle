@@ -12,7 +12,7 @@ repositories {
 
     // flat filesystem directory containing the PrimeFaces JAR file
     flatDir {
-        dirs 'C:/Users/Neha Surana/IdeaProjects/GoodBite/src/main/webapp/WEB-INF/lib'
+        dirs './src/main/webapp/WEB-INF/lib'
     }
 }
 

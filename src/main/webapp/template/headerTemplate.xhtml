@@ -34,7 +34,7 @@ siteTemplate for the entire site, achieving great maintainability.
                     <!-- Use EL to reference the image file since it will be accessed from all UI pages -->
                     <h:link outcome="/index">
                         <img src="#{resource['images:GoodBiteLogo.png']}"
-                             style="height:64px; width:auto; float:left; padding-left:10px; border:none;"
+                             style="height:70px; width:auto; float:left; padding-left:10px; border:none;"
                              alt="Good Bite Logo" />
                     </h:link>
                 </td>
@@ -62,10 +62,15 @@ siteTemplate for the entire site, achieving great maintainability.
                         <p:commandButton id="dynaButton" value="Menu" type="button" icon="pi pi-bars"/>
                         <p:menu overlay="true" trigger="dynaButton" my="left top" at="left bottom" style="white-space: nowrap;">
                             <p:menuitem value="Home" outcome="/index" icon="fas fa-home"/>
+                            <p:menuitem value="About Us" outcome="/template/AboutUs" icon="fas fa-home"/>
+                            <p:menuitem value="Nearby Stores" onclick="PF('StoreSearchDialog').show();return false;"
+                                        icon="fas fa-search"/>
+                            <p:menuitem value="Search Recipes" onclick="PF('RecipeSearchDialog').show();return false;"
+                                        icon="fas fa-search"/>
 
                             <!-- Menu Options IF a User is Signed In -->
                             <c:if test="#{userController.isLoggedIn() == true}">
-                                <p:menuitem value="My Files" outcome="/userFile/ListUserFiles" icon="fas fa-list" />
+                                <p:menuitem value="My Favorite Meals" outcome="/userFile/FavoriteMeals" icon="fas fa-list" />
 
                                 <p:menuitem outcome="/userAccount/Profile">
                                     <p:graphicImage cache="false" styleClass="smallProfilePhoto" value="#{userController.userPhoto()}" />
@@ -87,5 +92,7 @@ siteTemplate for the entire site, achieving great maintainability.
             </tr>
         </table>
     </h:form>
+    <ui:include src="/storeSearch/ApiSearch.xhtml"/>
+    <ui:include src="/recipeSearch/ApiSearch.xhtml"/>
 </ui:composition>
 </html>

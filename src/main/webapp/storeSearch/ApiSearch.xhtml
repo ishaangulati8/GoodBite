@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  - Created by Ishaan Gulati on 2021.11.21
+  - Copyright © 2021 Ishaan Gulati. All rights reserved. 
+  -->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<ui:composition>
+    <p:dialog id="StoreSearchDlg" header="Search Nearby Stores" widgetVar="StoreSearchDialog"
+              modal="true" position="center" appendTo="@(body)"
+              showEffect="slide" hideEffect="fade" responsive="true">
+
+        <h:form id="searchDialogForm">
+            <p:panel>
+                <h:panelGroup>
+                    <p:panelGrid columns="2" columnClasses="panelGridColumn12, panelGridColumn21"
+                                 styleClass="ui-noborder">
+                        <p:outputLabel value="ZipCode " for="zipCode"/>
+                        <p:inputNumber id="zipCode" value="#{nearByStoresSearchController.zipCode}"
+                                       required="true" requiredMessage="Please Enter a 5 Digit Zipcode!"
+                                       decimalPlaces="0" thousandSeparator="" maxValue="99999"
+                                       placeholder="Five Digit Zipcode.">
+                            <f:validator validatorId="zipCodeValidator"/>
+                            <f:validateLength maximum="5"/>
+                        </p:inputNumber>
+                        <p:outputLabel value="Distance in Miles" for="distanceInMiles"/>
+                        <p:inputNumber id="distanceInMiles" value="#{nearByStoresSearchController.distance}"
+                                       required="true" requiredMessage=" Please enter distance in miles!"
+                                       placeholder="Maximum Distance in Miles."
+                                       decimalPlaces="2" maxValue="100"
+                        >
+                            <f:validateLength maximum="5"/>
+                        </p:inputNumber>
+
+                        <!--                                select one menu for selecting number of recipes to be fetched from the endamam api.
+                        -->
+                        <p:outputLabel value="Maximum Number of Stores" for="maxNumberOfResults"/>
+                        <p:selectOneMenu id="maxNumberOfResults"
+                                         value="#{nearByStoresSearchController.maxNumberOfResults}"
+                                         required="true" requiredMessage="Please select the number of stores!">
+                            <f:selectItem itemLabel="Select Number" itemValue=""/>
+                            <f:selectItem itemLabel="10" itemValue="10"/>
+                            <f:selectItem itemLabel="20" itemValue="20"/>
+                            <f:selectItem itemLabel="30" itemValue="30"/>
+                            <f:selectItem itemLabel="40" itemValue="40"/>
+                            <f:selectItem itemLabel="50" itemValue="50"/>
+                        </p:selectOneMenu>
+
+                    </p:panelGrid>
+                </h:panelGroup>
+            </p:panel>
+            <h:panelGroup>
+                <br/><br/>
+                <div align="center">
+                    <!-- Search button
+                    clicking on submit button would call performSearch() function which would call and process the data
+                    from endamam api.
+                    -->
+                    <p:commandButton value="Search" icon="fas fa-search" styleClass="rounded-button"
+                                     ajax="false" action="#{nearByStoresSearchController.performSearch()}"/>
+
+                    &nbsp;&nbsp;
+                    <p:commandButton value="Clear" icon="fas fa-undo" styleClass="ui-button-outlined"
+                                     immediate="true"
+                                     actionListener="#{nearByStoresSearchController.clear()}"
+                                     update=":searchDialogForm" oncomplete="PF('StoreSearchDialog').show()">
+
+                        <p:resetInput target=":searchDialogForm"/>
+                    </p:commandButton>
+                    &nbsp;&nbsp;
+                    &nbsp;
+                    <!-- CANCEL button -->
+                    <p:commandButton value="Cancel" icon="fas fa-ban" styleClass="ui-button-outlined"
+                                     immediate="true" ajax="false"
+                                     actionListener="#{nearByStoresSearchController.clear()}"
+                                     onclick="PF('StoreSearchDialog').hide()"/>
+
+                    <!-- Clear entered values and selections if any -->
+                    <!--                        <p:resetInput target=":searchDialogForm"/>-->
+                    <!--                    </p:commandButton>-->
+                    <br/><br/>
+                </div>
+            </h:panelGroup>
+        </h:form>
+    </p:dialog>
+</ui:composition>
+</html>

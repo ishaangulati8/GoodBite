@@ -1,0 +1,305 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Eats Natural Foods",
+        "street": "North Main Street",
+        "suburb": "Snidow Heights",
+        "city": "Blacksburg",
+        "county": "Montgomery County",
+        "state": "Virginia",
+        "postcode": "24060-3348",
+        "country": "United States",
+        "country_code": "us",
+        "lon": -80.4202588,
+        "lat": 37.2351995,
+        "formatted": "Eats Natural Foods, North Main Street, Blacksburg, VA 24060-3348, United States of America",
+        "address_line1": "Eats Natural Foods",
+        "address_line2": "North Main Street, Blacksburg, VA 24060-3348, United States of America",
+        "categories": [
+          "commercial",
+          "commercial.supermarket"
+        ],
+        "details": [],
+        "datasource": {
+          "sourcename": "openstreetmap",
+          "attribution": "© OpenStreetMap contributors",
+          "license": "Open Database Licence",
+          "url": "https://www.openstreetmap.org/copyright"
+        },
+        "distance": 842,
+        "place_id": "51cc762a85e51a54c059990168041b9e4240f00103f901f05148950000000092031245617473204e61747572616c20466f6f6473"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.4202588,
+          37.23519949987821
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Lotus Chinese Store",
+        "street": "Kabrich Street",
+        "suburb": "Stonegate",
+        "city": "Blacksburg",
+        "county": "Montgomery County",
+        "state": "Virginia",
+        "postcode": "24060-3348",
+        "country": "United States",
+        "country_code": "us",
+        "lon": -80.4223916,
+        "lat": 37.2367541,
+        "formatted": "Lotus Chinese Store, Kabrich Street, Blacksburg, VA 24060-3348, United States of America",
+        "address_line1": "Lotus Chinese Store",
+        "address_line2": "Kabrich Street, Blacksburg, VA 24060-3348, United States of America",
+        "categories": [
+          "commercial",
+          "commercial.supermarket"
+        ],
+        "details": [],
+        "datasource": {
+          "sourcename": "openstreetmap",
+          "attribution": "© OpenStreetMap contributors",
+          "license": "Open Database Licence",
+          "url": "https://www.openstreetmap.org/copyright"
+        },
+        "distance": 1097,
+        "place_id": "51b906c776081b54c059fb1556f54d9e4240f00103f901ae374895000000009203134c6f747573204368696e6573652053746f7265"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.42239159999998,
+          37.23675409987842
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Kroger",
+        "housenumber": "1322",
+        "street": "South Main Street",
+        "suburb": "Ramble Ridge",
+        "city": "Blacksburg",
+        "county": "Montgomery County",
+        "state": "Virginia",
+        "postcode": "24060",
+        "country": "United States",
+        "country_code": "us",
+        "lon": -80.40273195158113,
+        "lat": 37.2167551,
+        "formatted": "Kroger, 1322 South Main Street, Blacksburg, VA 24060, United States of America",
+        "address_line1": "Kroger",
+        "address_line2": "1322 South Main Street, Blacksburg, VA 24060, United States of America",
+        "categories": [
+          "building",
+          "building.commercial",
+          "commercial",
+          "commercial.supermarket"
+        ],
+        "details": [
+          "details"
+        ],
+        "datasource": {
+          "sourcename": "openstreetmap",
+          "attribution": "© OpenStreetMap contributors",
+          "license": "Open Database Licence",
+          "url": "https://www.openstreetmap.org/copyright"
+        },
+        "distance": 1666,
+        "place_id": "51c359dcd4c61954c059bf7cf97cbe9b4240f00102f901e3cf5e04000000009203064b726f676572"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.40276071089379,
+          37.21675073797223
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Oasis World Market",
+        "housenumber": "1411",
+        "street": "South Main Street",
+        "suburb": "Hubbard Haven",
+        "city": "Blacksburg",
+        "county": "Montgomery County",
+        "state": "Virginia",
+        "postcode": "24060",
+        "country": "United States",
+        "country_code": "us",
+        "lon": -80.399611198721,
+        "lat": 37.215969,
+        "formatted": "Oasis World Market, 1411 South Main Street, Blacksburg, VA 24060, United States of America",
+        "address_line1": "Oasis World Market",
+        "address_line2": "1411 South Main Street, Blacksburg, VA 24060, United States of America",
+        "categories": [
+          "building",
+          "building.commercial",
+          "commercial",
+          "commercial.supermarket"
+        ],
+        "details": [],
+        "datasource": {
+          "sourcename": "openstreetmap",
+          "attribution": "© OpenStreetMap contributors",
+          "license": "Open Database Licence",
+          "url": "https://www.openstreetmap.org/copyright"
+        },
+        "distance": 1953,
+        "place_id": "5163e64c3b931954c0591b2ac6e0a49b4240f00102f90100004011000000009203124f6173697320576f726c64204d61726b6574"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.39961130628357,
+          37.215969177970884
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Kroger",
+        "housenumber": "903",
+        "street": "University City Boulevard",
+        "suburb": "Longview Estates",
+        "hamlet": "Stonegate",
+        "city": "Blacksburg",
+        "county": "Montgomery County",
+        "state": "Virginia",
+        "postcode": "24060",
+        "country": "United States",
+        "country_code": "us",
+        "lon": -80.43529497014833,
+        "lat": 37.235542300000006,
+        "formatted": "Kroger, 903 University City Boulevard, Blacksburg, VA 24060, United States of America",
+        "address_line1": "Kroger",
+        "address_line2": "903 University City Boulevard, Blacksburg, VA 24060, United States of America",
+        "categories": [
+          "building",
+          "building.commercial",
+          "commercial",
+          "commercial.supermarket",
+          "wheelchair",
+          "wheelchair.yes"
+        ],
+        "details": [
+          "details",
+          "details.facilities"
+        ],
+        "datasource": {
+          "sourcename": "openstreetmap",
+          "attribution": "© OpenStreetMap contributors",
+          "license": "Open Database Licence",
+          "url": "https://www.openstreetmap.org/copyright"
+        },
+        "distance": 1957,
+        "place_id": "511517bd8edb1b54c059f1d33648249e4240f00102f9011cd59e02000000009203064b726f676572"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.43527573076092,
+          37.235482241412576
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Food Lion",
+        "housenumber": "1415",
+        "street": "North Main Street",
+        "suburb": "Alleghany Heights",
+        "city": "Blacksburg",
+        "county": "Montgomery County",
+        "state": "Virginia",
+        "postcode": "24060-3348",
+        "country": "United States",
+        "country_code": "us",
+        "lon": -80.4149137,
+        "lat": 37.2480557,
+        "formatted": "Food Lion, 1415 North Main Street, Blacksburg, VA 24060-3348, United States of America",
+        "address_line1": "Food Lion",
+        "address_line2": "1415 North Main Street, Blacksburg, VA 24060-3348, United States of America",
+        "categories": [
+          "commercial",
+          "commercial.supermarket"
+        ],
+        "details": [
+          "details"
+        ],
+        "datasource": {
+          "sourcename": "openstreetmap",
+          "attribution": "© OpenStreetMap contributors",
+          "license": "Open Database Licence",
+          "url": "https://www.openstreetmap.org/copyright"
+        },
+        "distance": 2052,
+        "place_id": "51630a31f28d1a54c0590749074ac09f4240f00103f9018a07da3700000000920309466f6f64204c696f6e"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.41491369999999,
+          37.24805569987989
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Food Lion",
+        "housenumber": "801",
+        "street": "Hethwood Boulevard",
+        "suburb": "Pilgrims Pointe",
+        "hamlet": "Chowning Place",
+        "city": "Blacksburg",
+        "county": "Montgomery County",
+        "state": "Virginia",
+        "postcode": "24060",
+        "country": "United States",
+        "country_code": "us",
+        "lon": -80.4550331237805,
+        "lat": 37.2167664,
+        "formatted": "Food Lion, 801 Hethwood Boulevard, Blacksburg, VA 24060, United States of America",
+        "address_line1": "Food Lion",
+        "address_line2": "801 Hethwood Boulevard, Blacksburg, VA 24060, United States of America",
+        "categories": [
+          "building",
+          "building.commercial",
+          "commercial",
+          "commercial.supermarket"
+        ],
+        "details": [
+          "details",
+          "details.contact"
+        ],
+        "datasource": {
+          "sourcename": "openstreetmap",
+          "attribution": "© OpenStreetMap contributors",
+          "license": "Open Database Licence",
+          "url": "https://www.openstreetmap.org/copyright"
+        },
+        "distance": 3892,
+        "place_id": "51cd71e6941f1d54c0594649b41cbf9b4240f00102f9013ad7f91e00000000920309466f6f64204c696f6e"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.45505259041165,
+          37.2167697792343
+        ]
+      }
+    }
+  ]
+}

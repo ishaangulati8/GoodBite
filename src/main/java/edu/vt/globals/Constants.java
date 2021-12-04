@@ -38,8 +38,8 @@ public final class Constants {
 //    public static final String PHOTOS_ABSOLUTE_PATH = "C:/Users/Balci/DocRoot/CloudStorage/PhotoStorage/";
 
     // Unix (macOS) or Linux
-    public static final String FILES_ABSOLUTE_PATH  = "/Users/Balci/DocRoot/CloudStorage/FileStorage/";
-    public static final String PHOTOS_ABSOLUTE_PATH = "/Users/Balci/DocRoot/CloudStorage/PhotoStorage/";
+    public static final String FILES_ABSOLUTE_PATH  = "/Users/jack/DocRoot/GoodBiteStorage/FileStorage/";
+    public static final String PHOTOS_ABSOLUTE_PATH = "/Users/jack/DocRoot/GoodBiteStorage/PhotoStorage/";
 
     //--------------------------------
     // To run on your AWS EC2 instance
@@ -77,8 +77,8 @@ public final class Constants {
     //---------------
     // To run locally
     //---------------
-    public static final String FILES_URI  = "http://localhost:8080/files/";
-    public static final String PHOTOS_URI = "http://localhost:8080/photos/";
+    public static final String FILES_URI  = "http://localhost:8080/favmeals/";
+    public static final String PHOTOS_URI = "http://localhost:8080/profilepics/";
 
     //-----------------------------------------------------
     // To run on your AWS EC2 instance with your IP address
@@ -121,5 +121,17 @@ public final class Constants {
         "What is your mother's maiden name?",
         "What was your favorite place to visit as a child?"
     };
+
+    public static final String GEOAPIFY_BASE_URL = "https://api.geoapify.com/v2/places?categories=commercial.supermarket&filter=circle:";
+    public static final String GEOAPIFY_API_KEY = "688f2afc8f1c4a45b76f18bdd8c286bf";
+    public static final String EDAMAM_BASE_URL = "https://api.edamam.com/api/recipes/v2?type=public&q=";
+    public static final String EDAMAM_APP_ID = "99b8644e";
+    public static final String EDAMAM_API_KEY = "f52130770151d0b2a5cada889bf6ab3d";
+//    https://api.edamam.com/api/nutrition-data?app_id=764889db&app_key=54fbdd1873720b7dc5c01d4eb508a1a7&nutrition-type=cooking&ingr=100g%20rice
+    public static final String EDAMAM_NUTRITION_API_KEY = "54fbdd1873720b7dc5c01d4eb508a1a7";
+    public static final String EDAMAM_NUTRITION_APP_ID = "764889db";
+    public static final String EDAMAM_NUTRITION_BASE_URL = "https://api.edamam.com/api/nutrition-data?nutrition-type=cooking";
+
+
 
 }

@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  - Created by Ishaan Gulati on 2021.11.21
+  - Copyright © 2021 Ishaan Gulati. All rights reserved.
+  -->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+<!-- Do not enter tags before the composition line since they are ignored by JSF -->
+
+<!-- This page is constructed based on the siteTemplate -->
+<ui:composition template="/template/siteTemplate.xhtml">
+    <ui:define name="title">
+        <!-- Set the page title -->
+        <h:outputText value="Recipe Search Results" />
+    </ui:define>
+
+    <!-- Create the content for this page below -->
+    <ui:define name="editableContent">
+        <div align="center">
+            <h:form id="SearchedRecipesForm">
+                <p:dataView value="#{recipeSearchController.listOfSearchedRecipes}"
+                            var="aSearchedRecipe"
+                            rows="6"
+                            columns="2"
+                            paginator="true"
+                            rowsPerPageTemplate="3,6,9,12,15,18,21,24"
+                            paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+                            pageLinks="5"
+                            layout="grid"
+                            gridIcon="pi pi-th-large" listIcon="pi pi-bars"
+                            style="width:100%">
+
+                    <f:facet name="header">
+                        <h:outputText value="Recipe Search Results" />
+                    </f:facet>
+
+                    <p:dataViewGridItem>
+                        <!-- The p:panel defines a data grid cell displaying aSearchedMovie data -->
+                        <p:panel style="text-align:left" >
+
+                            <h:panelGrid columns="3" style="width:100%"
+                                         columnClasses="columnRecipeImage, columnMiddlePart, columnInfoButton">
+                                <p:graphicImage url="#{aSearchedRecipe.imageUrl}" width="92px" style="float:left" />
+
+                                <h:panelGrid style="width:100%; margin-left:10px">
+                                    <f:facet name="header">
+                                        <h:outputText value="#{aSearchedRecipe.name}"/>
+                                    </f:facet>
+                                    <br/>
+                                    <h:outputText value="by"/>
+                                    <br/>
+                                    <h:outputText value="#{aSearchedRecipe.source}" style="float:left"/>
+                                </h:panelGrid>
+
+                                <!--
+                                *** INFO button ***
+                                The "title" attribute value is shown as a tooltip text when the mouse is moved over the info icon.
+                                -->
+                                <p:commandLink update=":searchedRecipeDetailsForm" style="width:20px;float:right;"
+                                               oncomplete="PF('RecipeViewDialog').show()"
+                                               title="View Searched Recipe Details">
+
+                                    <!-- Display the Info Icon -->
+                                    <i class="fas fa-info-circle fa-2x"/>
+                                    <!--
+                                    When the Info Icon is clicked on (selected), the searchedMovieController.selected method
+                                    is invoked to set the selected current movie object to the aSearchedMovie object.
+                                    -->
+                                    <f:setPropertyActionListener target="#{recipeSearchController.selected}" value="#{aSearchedRecipe}" />
+                                </p:commandLink>
+
+                            </h:panelGrid>
+                        </p:panel>
+                    </p:dataViewGridItem>
+
+                    <p:dataViewListItem>
+                        <div align="center" style="width: 50%">
+                            <p:panel style="text-align:left" >
+
+                                <h:panelGrid columns="3" style="width:100%"
+                                             columnClasses="columnRecipeImage, columnMiddlePart, columnInfoButton">
+                                    <p:graphicImage url="#{aSearchedRecipe.imageUrl}" width="92px" style="float:left" />
+
+                                    <h:panelGrid style="width:100%; margin-left:10px">
+                                        <f:facet name="header">
+                                            <h:outputText value="#{aSearchedRecipe.name}"/>
+                                        </f:facet>
+                                        <br/>
+                                        <h:outputText value="by"/>
+                                        <br/>
+                                        <h:outputText value="#{aSearchedRecipe.source}" style="float:left"/>
+                                    </h:panelGrid>
+
+                                    <!--
+                                    *** INFO button ***
+                                    The "title" attribute value is shown as a tooltip text when the mouse is moved over the info icon.
+                                    -->
+                                    <p:commandLink update=":searchedRecipeDetailsForm" style="width:20px;float:right;"
+                                                   oncomplete="PF('RecipeViewDialog').show()"
+                                                   title="View Searched Recipe Details">
+
+                                        <!-- Display the Info Icon -->
+                                        <i class="fas fa-info-circle fa-2x"/>
+                                        <!--
+                                        When the Info Icon is clicked on (selected), the searchedMovieController.selected method
+                                        is invoked to set the selected current movie object to the aSearchedMovie object.
+                                        -->
+                                        <f:setPropertyActionListener target="#{recipeSearchController.selected}" value="#{aSearchedRecipe}" />
+                                    </p:commandLink>
+
+                                </h:panelGrid>
+                            </p:panel>
+                        </div>
+                    </p:dataViewListItem>
+
+                </p:dataView>
+            </h:form>
+        </div>
+
+        <ui:include src="/recipeSearch/RecipeDetails.xhtml"/>
+
+    </ui:define>
+
+</ui:composition>
+<!-- Do not enter tags after the composition line since they are ignored by JSF -->
+
+</html>

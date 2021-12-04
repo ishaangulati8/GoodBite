@@ -7,7 +7,18 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core"
-      xmlns:p="http://primefaces.org/ui">
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+>
+<head>
+<style type="text/css">
+    p {
+        line-height: 1.5;
+        margin: 0;
+    }
+
+</style>
+</head>
 
 <!-- Do not enter tags before the composition line since they are ignored by JSF -->
 
@@ -16,6 +27,7 @@
 
     <!-- Create the content for this page below -->
     <ui:define name="editableContent">
+<h:form>
         <div class="card" align="center">
             <!--
             ========================================
@@ -35,23 +47,65 @@
                 Photo description (alt) is omitted.
             (10) Change max-width to be the maximum width of the photos used.
             -->
-<!--            <p:galleria value="#{galleriaManager.listOfPhotos}" var="aPhoto" numVisible="7"-->
-<!--                        responsiveOptions="#{galleriaManager.responsiveOptions1}"-->
-<!--                        circular="true" autoPlay="true" transitionInterval="4000"-->
-<!--                        showCaption="true" style="max-width: 600px">-->
+
             <p:galleria value="#{galleriaManager.listOfPhotos}" var="aPhoto" numVisible="7" responsiveOptions="#{galleriaView.responsiveOptions1}" style="max-width: 500px">
                 <p:graphicImage value="#{aPhoto.regularPhotoFilepath}" alt="#{aPhoto.title}" style="width: 100%; display: block;" />
-
                 <f:facet name="caption">
                     <span class="p-mb-2">#{aPhoto.title}</span>
                 </f:facet>
-
                 <f:facet name="thumbnail">
                     <p:graphicImage value="#{aPhoto.thumbnailPhotoFilepath}" alt="#{aPhoto.title}" style="display: block;" />
                 </f:facet>
             </p:galleria>
+            <br></br><br></br>
         </div>
-    </ui:define>
+        <div></div>
+        <div class="card">
+            <p:card style="width: 25%; float:left ; padding: 0 20px" >
+                <f:facet name="header">
+                    <img alt="user header" src="../../resources/demo/images/usercard.png"/>
+                </f:facet>
+                <f:facet name="title">
+                    Advanced Card
+                </f:facet>
+                <f:facet name="subtitle">
+                    Card subtitle
+                </f:facet>
+
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt
+                    quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque quas!</p>
+
+                <f:facet name="footer">
+                    <p:commandButton icon="pi pi-check" value="Save"/>
+                    <p:commandButton icon="pi pi-times" value="Cancel" styleClass="ui-button-secondary" style="margin-left: .5em"/>
+                </f:facet>
+
+            </p:card>
+            &nbsp; &nbsp;
+            &nbsp;&nbsp;
+            <p:card style="width: 25%; float:left ; padding: 0 20px" >
+                <f:facet name="header">
+                    <img alt="user header" src="../../resources/demo/images/usercard.png"/>
+                </f:facet>
+                <f:facet name="title">
+                    Advanced Card
+                </f:facet>
+                <f:facet name="subtitle">
+                    Card subtitle
+                </f:facet>
+
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt
+                    quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque quas!</p>
+
+                <f:facet name="footer">
+                    <p:commandButton icon="pi pi-check" value="Save"/>
+                    <p:commandButton icon="pi pi-times" value="Cancel" styleClass="ui-button-secondary" style="margin-left: .5em"/>
+                </f:facet>
+            </p:card>
+        </div>
+</h:form>
+</ui:define>
+
 </ui:composition>
 <!-- Do not enter tags after the composition line since they are ignored by JSF -->
 
