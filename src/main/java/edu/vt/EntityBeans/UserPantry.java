@@ -5,20 +5,10 @@
 
 package edu.vt.EntityBeans;
 
-import java.io.Serializable;
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
-import javax.persistence.Table;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.io.Serializable;
 
 
 /*
@@ -37,19 +27,20 @@ representing the User table in the CloudDriveDB database.
         @NamedQuery(name = "UserPantry.findAll", query = "SELECT u FROM UserPantry u")
         , @NamedQuery(name = "UserPantry.findById", query = "SELECT u FROM UserPantry u WHERE u.id = :id")
         , @NamedQuery(name = "UserPantry.findByIngredientName", query = "SELECT u FROM UserPantry u WHERE u.ingredient = :ingredient")
+        , @NamedQuery(name = "UserPantry.findAvailableItems", query = "SELECT u FROM UserPantry u WHERE u.userId.id = :userId and u.quantity > 0")
         , @NamedQuery(name = "UserPantry.findUserPantryByUserId", query = "SELECT u FROM UserPantry u WHERE u.userId.id = :userId")
 })
 
-public class UserPantry implements Serializable{
+public class UserPantry implements Serializable {
     /**
      * CREATE TABLE `UserPantry` (
-     *                               `id` int unsigned NOT NULL AUTO_INCREMENT,
-     *                               PRIMARY KEY (`id`),
-     *                               `ingredient` varchar(256) NOT NULL,
-     *                               `calories` decimal(8, 2) DEFAULT NULL,
-     *                               `weight` decimal(8, 2) DEFAULT NULL,
-     *                               `user_id` int unsigned DEFAULT NULL,
-     *                               FOREIGN KEY (user_id) REFERENCES User(id) ON DELETE CASCADE
+     * `id` int unsigned NOT NULL AUTO_INCREMENT,
+     * PRIMARY KEY (`id`),
+     * `ingredient` varchar(256) NOT NULL,
+     * `calories` decimal(8, 2) DEFAULT NULL,
+     * `weight` decimal(8, 2) DEFAULT NULL,
+     * `user_id` int unsigned DEFAULT NULL,
+     * FOREIGN KEY (user_id) REFERENCES User(id) ON DELETE CASCADE
      */
 
     private static final long serialVersionUID = 1L;
@@ -79,7 +70,6 @@ public class UserPantry implements Serializable{
     private Double calories;
 
 
-
     @Basic(optional = false)
     @NotNull
 //    @Size(min = 1, max = 256)
@@ -104,7 +94,8 @@ public class UserPantry implements Serializable{
     private String nutrients;
 
 
-    public UserPantry() {}
+    public UserPantry() {
+    }
 
     public UserPantry(Integer id, String ingredient, Double calories, Double quantity, User userId, String unit, String nutrients) {
         this.id = id;
