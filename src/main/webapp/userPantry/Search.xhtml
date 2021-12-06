@@ -41,9 +41,9 @@
                             </p:growl>
 
                             <h5 class="p-mt-0">Select Ingredients</h5>
-                            <p:selectCheckboxMenu id="menu" value="#{pantryController.selectedListOfIngredients}" label="ingredients" style="width: 15rem"
+                            <p:selectCheckboxMenu id="menu" value="#{pantryRecipeSearch.selectedListOfIngredients}" label="ingredients" style="width: 15rem"
                                                   filter="true" filterMatchMode="startsWith" panelStyle="width: 15rem" scrollHeight="250">
-                                <f:selectItems value="#{pantryController.listOfIngredients}"/>
+                                <f:selectItems value="#{pantryRecipeSearch.listOfIngredientNames}"/>
                             </p:selectCheckboxMenu>
 
                         </h:form>
@@ -56,7 +56,7 @@
                 <div align="center">
                     <!-- SAVE button -->
                     <p:commandButton value="Search" icon="fas fa-search" styleClass="rounded-button"
-                                     actionListener="#{recipeSearchController.performIngredientRecipeSearch(pantryController.listOfIngredients)}"
+                                     actionListener="#{pantryRecipeSearch.performSearch}"
                                      ajax="false"
                                      />
                     &nbsp;

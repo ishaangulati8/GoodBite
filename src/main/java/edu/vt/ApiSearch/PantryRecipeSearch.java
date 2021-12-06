@@ -29,6 +29,7 @@ public class PantryRecipeSearch implements Serializable{
     private List<String> listOfIngredientNames = null;
     private List<String> selectedListOfIngredients = null;
     private List<SearchedRecipe> listOfSearchedRecipes = null;
+    private SearchedRecipe selected = null;
 
     @EJB
     UserPantryFacade userPantryFacade;
@@ -70,6 +71,14 @@ public class PantryRecipeSearch implements Serializable{
         }
         query = query.trim();
         return query;
+    }
+
+    public List<SearchedRecipe> getListOfSearchedRecipes() {
+        return listOfSearchedRecipes;
+    }
+
+    public void setListOfSearchedRecipes(List<SearchedRecipe> listOfSearchedRecipes) {
+        this.listOfSearchedRecipes = listOfSearchedRecipes;
     }
 
     public String performSearch() {
@@ -120,7 +129,7 @@ public class PantryRecipeSearch implements Serializable{
         } catch (Exception ex) {
             Methods.showMessage("Information", "No Results!", "No recipe found for the search query!");
         }
-        return "/recipeSearch/ApiSearchResults?faces-redirect=true";
+        return "/userPantry/ApiSearchResults?faces-redirect=true";
     }
 
 
@@ -303,7 +312,18 @@ public class PantryRecipeSearch implements Serializable{
         nutrition += ".";
         return new SearchedRecipe(name, imageURL, ingredientLines, publisherName, nutrition, recipeURL, healthLabels, dietLabels, cautions, uri);
 
+    }
 
+    public SearchedRecipe getSelected() {
+        return selected;
+    }
+
+    public void setSelected(SearchedRecipe selected) {
+        this.selected = selected;
+    }
+
+    public void clear() {
+        selected = null;
     }
 
 

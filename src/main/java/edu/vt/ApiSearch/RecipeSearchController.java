@@ -222,7 +222,7 @@ public class RecipeSearchController implements Serializable {
 
     }
 
-    public String performSearch() {
+    public String  performSearch() {
         selected = null;
 
         // This sets the necessary flag to ensure the messages are preserved.
@@ -250,7 +250,7 @@ public class RecipeSearchController implements Serializable {
     }
 
 
-    private String formatNutrientsQuery(ArrayList<UserPantry> selectedIngredients) {
+    public String formatNutrientsQuery(ArrayList<UserPantry> selectedIngredients) {
         String formattedQuery = "";
         for (UserPantry str : selectedIngredients) {
             formattedQuery += " " + str.getIngredient();
@@ -313,14 +313,15 @@ public class RecipeSearchController implements Serializable {
         FacesContext.getCurrentInstance().getExternalContext().getFlash().setKeepMessages(true);
 
         // Spaces in search query must be replaced with "%20"
-        String searchQuery = this.formatNutrientsQuery(selectedIngredients).replaceAll(" ", "%20");
+        query = this.formatNutrientsQuery(selectedIngredients);
+        String searchQuery = query.replaceAll(" ", "%20");
         try {
-            this.apiSearch(searchQuery);
-            return "/recipeSearch/ApiSearchResults?faces-redirect=true";
+            this.listOfSearchedRecipes=this.apiSearch(searchQuery);
+            return "/userPantry/PantryApiSearchResults?faces-redirect=true";
         } catch (Exception ex) {
             Methods.showMessage("Information", "No Results!", "No recipe found for the search query!");
         }
-        return "/recipeSearch/ApiSearchResults?faces-redirect=true";
+        return "/userPantry/PantryApiSearchResults?faces-redirect=true";
     }
 
 

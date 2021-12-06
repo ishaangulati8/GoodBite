@@ -33,7 +33,7 @@
     <ui:define name="editableContent">
         <div align="center">
             <h:form id="SearchedRecipesForm">
-                <p:dataView value="#{recipeSearchController.listOfSearchedRecipes}"
+                <p:dataView value="#{pantryRecipeSearch.listOfSearchedRecipes}"
                             var="aSearchedRecipe"
                             rows="6"
                             columns="2"
@@ -140,7 +140,7 @@
                                         When the Info Icon is clicked on (selected), the searchedMovieController.selected method
                                         is invoked to set the selected current movie object to the aSearchedMovie object.
                                         -->
-                                        <f:setPropertyActionListener target="#{recipeSearchController.selected}" value="#{aSearchedRecipe}" />
+                                        <f:setPropertyActionListener target="#{pantryRecipeSearch.selected}" value="#{aSearchedRecipe}" />
                                     </p:commandLink>
 
                                 </h:panelGrid>
