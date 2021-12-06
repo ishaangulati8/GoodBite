@@ -7,6 +7,9 @@
 
 package edu.vt.controllers;
 
+import edu.vt.ApiSearch.RecipeSearchController;
+import edu.vt.ApiSearch.SearchedRecipe;
+import edu.vt.EntityBeans.Recipe;
 import edu.vt.globals.Methods;
 import edu.vt.EntityBeans.User;
 import edu.vt.ApiSearch.Nutrition;
@@ -17,9 +20,11 @@ import edu.vt.FacadeBeans.UserPantryFacade;
 
 
 import javax.ejb.EJB;
+import java.util.ArrayList;
 import java.util.Map;
 import java.util.List;
 import javax.ejb.EJBException;
+import javax.inject.Inject;
 import javax.inject.Named;
 import java.io.Serializable;
 import java.util.logging.Level;
@@ -78,7 +83,7 @@ public class PantryController implements Serializable {
 
     // selected = object reference of a selected Recipe object
     private UserPantry selected;
-    private List<UserPantry> selectedListOfIngredients;
+    private ArrayList<UserPantry> selectedListOfIngredients;
     private String[] selectedIngredients;
 
     public void setListOfIngredients(List<UserPantry> listOfIngredients) {
@@ -97,7 +102,7 @@ public class PantryController implements Serializable {
         return selectedListOfIngredients;
     }
 
-    public void setSelectedListOfIngredients(List<UserPantry> selectedListOfIngredients) {
+    public void setSelectedListOfIngredients(ArrayList<UserPantry> selectedListOfIngredients) {
         this.selectedListOfIngredients = selectedListOfIngredients;
     }
 
@@ -244,7 +249,18 @@ public class PantryController implements Serializable {
         }
     }
 
+    @Inject RecipeSearchController recipeSearchController;
+    public String searchForRecipe() {
+
+        recipeSearchController.setSelected(null);
+        String query = recipeSearchController.formatNutrientsQuery(this.selectedListOfIngredients);
+        recipeSearchController.setQuery(query);
+        return  recipeSearchController.performSearch();
+    }
+
+
 }
+
 
 
 

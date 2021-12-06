@@ -149,8 +149,10 @@ This page is constructed based on the siteTemplate
                                 </p:confirmDialog>
 
                                 <p:commandButton id="searchButton" value="Search Recipes from Pantry Ingredients" icon="fas fa-search" styleClass="rounded-button"
-                                                 update=":PantrySearchForm" oncomplete="PF('PantrySearchDialog').show()"
+                                                 oncomplete="PF('PantrySearchDialog').show()"
                                                  disabled="#{empty pantryController.selected}"/>
+
+
 
                                 <!-- *******************************************
                                 End of Display of the DELETE Confirmation dialog

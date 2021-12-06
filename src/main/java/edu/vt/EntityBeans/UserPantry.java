@@ -203,7 +203,7 @@ public class UserPantry implements Serializable{
     // Return String representation of database primary key id
     @Override
     public String toString() {
-        return id.toString();
+        return ingredient.toString();
     }
 
 }
