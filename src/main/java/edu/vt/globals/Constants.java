@@ -34,8 +34,8 @@ public final class Constants {
     //---------------
 
     // Windows
-//    public static final String FILES_ABSOLUTE_PATH  = "C:/Users/Balci/DocRoot/CloudStorage/FileStorage/";
-//    public static final String PHOTOS_ABSOLUTE_PATH = "C:/Users/Balci/DocRoot/CloudStorage/PhotoStorage/";
+//    public static final String FILES_ABSOLUTE_PATH  = "C:/Users/neha/DocRoot/CS5704-Team5-FileStorage/FileStorage/";
+//    public static final String PHOTOS_ABSOLUTE_PATH = "C:/Users/neha/DocRoot/CS5704-Team5-FileStorage/PhotoStorage/";
 
     // Unix (macOS) or Linux
 //    public static final String FILES_ABSOLUTE_PATH  = "/Users/jack/DocRoot/CS5704-Team5-FileStorage/FileStorage/";
