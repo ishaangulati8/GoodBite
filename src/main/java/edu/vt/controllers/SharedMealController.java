@@ -100,7 +100,7 @@ public class SharedMealController implements Serializable {
          */
         listOfSharedMeals.forEach(userFile -> {
 
-            // Obtain the filename stored in CloudStorage/FileStorage as 'userId_filename'
+            // Obtain the filename stored in CS5704-Team5-FileStorage/FileStorage as 'userId_filename'
             String storedFileName = userFile.getMealPhoto();
 
             // Remove the "userId_" (e.g., "4_") prefix in the stored filename

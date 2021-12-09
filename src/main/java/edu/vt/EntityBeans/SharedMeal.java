@@ -22,7 +22,7 @@ import javax.validation.constraints.Size;
 
 /*
 The @Entity annotation designates this class as a JPA Entity POJO class
-representing the UploadedMeal table in the CloudDriveDB database.
+representing the UploadedMeal table in the GoodBiteDB database.
  */
 @Entity
 
@@ -74,7 +74,7 @@ public class SharedMeal implements Serializable {
     /*
     ===================================================================
     Class constructors for instantiating a UploadedMeal entity object to
-    represent a row in the UploadedMeal table in the CloudDriveDB database.
+    represent a row in the UploadedMeal table in the GoodBiteDB database.
     ===================================================================
      */
     public SharedMeal() {
@@ -92,7 +92,7 @@ public class SharedMeal implements Serializable {
     /*
     ======================================================
     Getter and Setter methods for the attributes (columns)
-    of the UploadedMeal table in the CloudDriveDB database.
+    of the UploadedMeal table in the GoodBiteDB database.
     ======================================================
      */
     public Integer getId() {

@@ -32,7 +32,7 @@ import java.util.logging.Logger;
 ---------------------------------------------------------------------------
 The @Named (javax.inject.Named) annotation indicates that the objects
 instantiated from this class will be managed by the Contexts and Dependency
-Injection (CDI) container. The name "recipeController" is used within
+Injection (CDI) container. The name "pantryController" is used within
 Expression Language (EL) expressions in JSF (XHTML) facelets pages to
 access the properties and invoke methods of this class.
 ---------------------------------------------------------------------------
@@ -40,7 +40,7 @@ access the properties and invoke methods of this class.
 @Named("pantryController")
 
 /*
-The @SessionScoped annotation preserves the values of the recipeController
+The @SessionScoped annotation preserves the values of the pantryController
 object's instance variables across multiple HTTP request-response cycles
 as long as the user's established HTTP session is alive.
  */
@@ -48,7 +48,7 @@ as long as the user's established HTTP session is alive.
 
 /*
 -----------------------------------------------------------------------------
-Marking the RecipeController class as "implements Serializable" implies that
+Marking the pantryController class as "implements Serializable" implies that
 instances of the class can be automatically serialized and deserialized.
 
 Serialization is the process of converting a class instance (object)
@@ -68,15 +68,15 @@ public class PantryController implements Serializable {
 
     /*
     The @EJB annotation directs the EJB Container Manager to inject (store) the object reference of the
-    RecipeFacade bean into the instance variable 'recipeFacade' after it is instantiated at runtime.
+    PantryFacade bean into the instance variable 'pantryFacade' after it is instantiated at runtime.
      */
     @EJB
     private UserPantryFacade pantryFacade;
 
-    // List of object references of Recipe  objects
+    // List of object references of Ingredient objects
     private List<UserPantry> listOfIngredients = null;
 
-    // selected = object reference of a selected Recipe object
+    // selected = object reference of a selected Ingredient object
     private UserPantry selected;
     private List<String> listOfIngredientNames = null;
     private List<String> selectedListOfIngredients = null;
