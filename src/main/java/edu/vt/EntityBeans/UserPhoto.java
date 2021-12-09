@@ -44,7 +44,7 @@ public class UserPhoto implements Serializable {
     /*
     ========================================================
     Instance variables representing the attributes (columns)
-    of the UserPhoto table in the CloudDriveDB database.
+    of the UserPhoto table in the GoodBiteDB database.
 
     CREATE TABLE UserPhoto
     (
@@ -79,7 +79,7 @@ public class UserPhoto implements Serializable {
     /*
     =================================================================
     Class constructors for instantiating a UserPhoto entity object to
-    represent a row in the UserPhoto table in the CloudDriveDB database.
+    represent a row in the UserPhoto table in the GoodBiteDB database.
     =================================================================
      */
     public UserPhoto() {
@@ -94,7 +94,7 @@ public class UserPhoto implements Serializable {
     /*
     ======================================================
     Getter and Setter methods for the attributes (columns)
-    of the UserPhoto table in the CloudDriveDB database.
+    of the UserPhoto table in the GoodBiteDB database.
     ======================================================
      */
     public Integer getId() {

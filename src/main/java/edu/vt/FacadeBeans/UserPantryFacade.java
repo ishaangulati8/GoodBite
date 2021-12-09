@@ -93,13 +93,6 @@ public class UserPantryFacade extends AbstractFacade<UserPantry> {
 
     //    public List<UserPantry> findUserPantryByUserId
     public List<UserPantry> findUserPantryByUserId(Integer userId) {
-        /*
-        The following @NamedQuery definition is given in UserVideo entity class file:
-            @NamedQuery(name = "UserVideo.findVideosByUserDatabasePrimaryKey", query = "SELECT p FROM UserPantry p WHERE p.userId.id = :primaryKey")
-
-        userId.id --> User object's database primary key
-        The following statement obtains the results from the named database query.
-         */
 
         return (List<UserPantry>) entityManager.createNamedQuery("UserPantry.findUserPantryByUserId")
                 .setParameter("userId", userId)

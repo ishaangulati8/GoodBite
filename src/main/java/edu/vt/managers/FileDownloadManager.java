@@ -55,37 +55,6 @@ public class FileDownloadManager implements Serializable {
         // Convert the JSON array into a String
         String dataTableAsJsonString = jasonArray.toString();
 
-        /*
-        -----------------------------------------------------------------------------------------------------
-        'listOfCompanies' is List<Company>: an Array List containing the object references of Company objects.
-        Each Company object is represented as a JSON object with KEY-VALUE pairings.
-        The KEY-VALUE pairings are not in any particular order.
-        [                                              <== Start of JSON array
-            {                                          <== Start of first company's JSON object
-                "ticker":"WMT",
-                "website":"https://www.walmart.com",
-                "name":"Wal-Mart Stores Inc.",
-                "exchange":"NYSE",
-                "id":1,
-                "employees":2300000,
-                "revenues":500343,
-                "sector":"Retailing"
-            },                                         <== End of first company's JSON object
-            :
-            :
-            {                                          <== Start of last company's JSON object
-                "ticker":"GM",
-                "website":"https://www.gm.com",
-                "name":"General Motors Company",
-                "exchange":"NYSE",
-                "id":43,
-                "employees":180000,
-                "revenues":157311,
-                "sector":"Motor Vehicles & Parts"
-            }                                          <== End of last company's JSON object
-        ]                                              <== End of JSON array
-        -----------------------------------------------------------------------------------------------------
-         */
         // Convert the String into an InputStream
         InputStream inputStream = new ByteArrayInputStream(dataTableAsJsonString.getBytes());
 

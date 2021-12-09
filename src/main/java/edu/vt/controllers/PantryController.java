@@ -48,7 +48,7 @@ as long as the user's established HTTP session is alive.
 
 /*
 -----------------------------------------------------------------------------
-Marking the PantryController class as "implements Serializable" implies that
+Marking the pantryController class as "implements Serializable" implies that
 instances of the class can be automatically serialized and deserialized.
 
 Serialization is the process of converting a class instance (object)
@@ -68,15 +68,15 @@ public class PantryController implements Serializable {
 
     /*
     The @EJB annotation directs the EJB Container Manager to inject (store) the object reference of the
-    RecipeFacade bean into the instance variable 'recipeFacade' after it is instantiated at runtime.
+    PantryFacade bean into the instance variable 'pantryFacade' after it is instantiated at runtime.
      */
     @EJB
     private UserPantryFacade pantryFacade;
 
-    // List of object references of Recipe  objects
+    // List of object references of Ingredient objects
     private List<UserPantry> listOfIngredients = null;
 
-    // selected = object reference of a selected Recipe object
+    // selected = object reference of a selected Ingredient object
     private UserPantry selected;
     private List<String> listOfIngredientNames = null;
     private List<String> selectedListOfIngredients = null;

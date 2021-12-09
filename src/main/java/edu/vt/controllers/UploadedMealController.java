@@ -147,7 +147,7 @@ public class UploadedMealController implements Serializable {
              */
             listOfUploadedMeals.forEach(userFile -> {
 
-                // Obtain the filename stored in CloudStorage/FileStorage as 'userId_filename'
+                // Obtain the filename stored in CS5704-Team5-FileStorage/FileStorage as 'userId_filename'
                 String storedFileName = userFile.getMealPhoto();
 
                 // Remove the "userId_" (e.g., "4_") prefix in the stored filename
@@ -200,7 +200,7 @@ public class UploadedMealController implements Serializable {
         if (!JsfUtil.isValidationFailed()) {
             // No JSF validation error. The CREATE operation is successfully performed.
             selected = null;        // Remove selection
-            listOfUploadedMeals = null;    // Invalidate listOfVideos to trigger re-query.
+            listOfUploadedMeals = null;    // Invalidate listOfUploadedMeals to trigger re-query.
         }
     }
 
@@ -368,7 +368,7 @@ public class UploadedMealController implements Serializable {
             return "";
         } else {
             try {
-                // Delete the file from CloudStorage/FileStorage
+                // Delete the file from CS5704-Team5-FileStorage/FileStorage
                 Files.deleteIfExists(Paths.get(uploadedMealToDelete.getFilePath()));
 
                 // Delete the user file record from the database
@@ -419,7 +419,7 @@ public class UploadedMealController implements Serializable {
         // Obtain the object reference of the UploadedMeal whose primary key = fileId
         UploadedMeal uploadedMeal = uploadedMealFacade.getUserFile(fileId);
 
-        // Obtain the uploadedMeal's filename as it is stored in the CloudDrive DB database
+        // Obtain the uploadedMeal's filename as it is stored in the GoodBiteDB database
         String imageFileName = uploadedMeal.getMealPhoto();
 
         // Extract the file extension from the filename
