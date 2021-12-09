@@ -21,7 +21,7 @@ import java.util.Map;
 ---------------------------------------------------------------------------
 The @Named (javax.inject.Named) annotation indicates that the objects
 instantiated from this class will be managed by the Contexts and Dependency
-Injection (CDI) container. The name "recipeController" is used within
+Injection (CDI) container. The name "userRecipeController" is used within
 Expression Language (EL) expressions in JSF (XHTML) facelets pages to
 access the properties and invoke methods of this class.
 ---------------------------------------------------------------------------
@@ -29,7 +29,7 @@ access the properties and invoke methods of this class.
 @Named("userRecipeController")
 
 /*
-The @SessionScoped annotation preserves the values of the recipeController
+The @SessionScoped annotation preserves the values of the userRecipeController
 object's instance variables across multiple HTTP request-response cycles
 as long as the user's established HTTP session is alive.
  */
@@ -37,7 +37,7 @@ as long as the user's established HTTP session is alive.
 
 /*
 -----------------------------------------------------------------------------
-Marking the RecipeController class as "implements Serializable" implies that
+Marking the UserRecipeController class as "implements Serializable" implies that
 instances of the class can be automatically serialized and deserialized.
 
 Serialization is the process of converting a class instance (object)

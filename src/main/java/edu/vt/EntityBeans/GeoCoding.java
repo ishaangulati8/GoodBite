@@ -11,7 +11,7 @@ import javax.validation.constraints.Size;
 
 /*
         The @Entity annotation designates this class as a JPA Entity POJO class
-representing the Movie table in the MoviesDB database.
+representing the GeoCoding table in the GoodBiteDB database.
         */
 @Entity
 

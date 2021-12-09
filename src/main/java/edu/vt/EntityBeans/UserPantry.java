@@ -23,7 +23,7 @@ import javax.validation.constraints.Size;
 
 /*
 The @Entity annotation designates this class as a JPA Entity POJO class
-representing the User table in the CloudDriveDB database.
+representing the User table in the GoodBiteDB database.
  */
 @Entity
 
